@@ -1,0 +1,212 @@
+﻿<ui:UiWindow x:Class="Finance_Manager.MainWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             ExtendsContentIntoTitleBar="True"
+             WindowStyle="None"
+             WindowBackdropType="Mica"
+             Height="800" 
+             Width="1500"
+             MinWidth="1000" 
+             MinHeight="600"
+             FontSize="20">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Grid.Row="0" 
+                     Title="Finance manager" 
+                     VerticalContentAlignment="Stretch" 
+                     Padding="10,0,0,0" />
+        
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" 
+                            HorizontalAlignment="Center" 
+                            Orientation="Horizontal">
+                    
+                    <ToggleButton Content="Пользователи" 
+                                  FontSize="25" 
+                                  Width="200" 
+                                  Margin="5" 
+                                  IsChecked="True"
+                                  Name="toggleButtonPersons" 
+                                  Checked="toggleButtonPersonsSelected" />
+                    
+                    <ToggleButton Content="Переводы" 
+                                  FontSize="25" 
+                                  Width="200" 
+                                  Margin="5" 
+                                  Name="toggleButtonTransfers"
+                                  Checked="toggleButtonTransfersSelected" />
+                    
+                    <ToggleButton Content="Отчеты" 
+                                  FontSize="25" 
+                                  Width="200" 
+                                  Margin="5" 
+                                  Name="toggleButtonReports"
+                                  Checked="toggleButtonReportsSelected" />
+                </StackPanel>
+                
+                <TabControl Grid.Row="1" Name="tabControl">
+                    <TabControl.ItemContainerStyle>
+                        <Style TargetType="{x:Type TabItem}">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </Style>
+                    </TabControl.ItemContainerStyle>
+                    
+                    <TabItem>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="60" />
+                            </Grid.RowDefinitions>
+
+                            <ui:DataGrid Grid.Row="0" 
+                                         Name="dataGridPersons" 
+                                         SelectionUnit="FullRow" 
+                                         CanUserAddRows="False"
+                                         CanUserReorderColumns="False"
+                                         CanUserDeleteRows="False" 
+                                         CanUserResizeColumns="False"
+                                         CanUserResizeRows="False" 
+                                         CanUserSortColumns="True"
+                                         IsReadOnly="True" 
+                                         SelectionMode="Extended"
+                                         RowStyle="{StaticResource DefaultDataGridRowStyle}"
+                                         FontSize="25" />
+                            
+                            <StackPanel Grid.Row="1" 
+                                        Orientation="Horizontal" 
+                                        HorizontalAlignment="Center">
+                                
+                                <Button Content="Добавить пользователя" 
+                                        Margin="5" 
+                                        Width="200" 
+                                        Click="ButtonClickOpenAddPersonForm" />
+                                
+                                <Button Content="Перевод между пользователями" 
+                                        Margin="5" 
+                                        Width="250" 
+                                        Click="ButtonClickOpenAddPersonsTransferForm" />
+                                
+                                <Button Content="Удалить пользователя" 
+                                        Margin="5" 
+                                        Width="200" 
+                                        Click="ButtonClickRemovePerson" />
+                                
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    
+                    <TabItem>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="60" />
+                            </Grid.RowDefinitions>
+
+                            <DataGrid Grid.Row="0"
+                                      Name="dataGridTransfers" 
+                                      SelectionUnit="FullRow" 
+                                      CanUserAddRows="False"
+                                      CanUserReorderColumns="False"
+                                      CanUserDeleteRows="False" 
+                                      CanUserResizeColumns="False"
+                                      CanUserResizeRows="False" 
+                                      CanUserSortColumns="True"
+                                      IsReadOnly="True" 
+                                      SelectionMode="Extended"
+                                      RowStyle="{StaticResource DefaultDataGridRowStyle}"
+                                      FontSize="25" />
+                            
+                            <StackPanel Grid.Row="1" 
+                                        Orientation="Horizontal" 
+                                        HorizontalAlignment="Center">
+                                
+                                <Button Content="Категории переводов" 
+                                        Margin="5" 
+                                        Width="200" 
+                                        Click="ButtonClickOpenAddCategoryForm" />
+                                
+                                <Button Content="Произвести перевод" 
+                                        Margin="5" 
+                                        Width="200" 
+                                        Click="ButtonClickOpenAddTransferForm" />
+                                
+                                <Button Content="Удалить перевод" 
+                                        Margin="5" 
+                                        Width="200" 
+                                        Click="ButtonClickRemoveTransfer" />
+                                
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                    
+                    <TabItem>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="60" />
+                            </Grid.RowDefinitions>
+
+                            <DataGrid Grid.Row="0" 
+                                      Name="dataGridReport" 
+                                      SelectionUnit="FullRow" 
+                                      CanUserAddRows="False"
+                                      CanUserReorderColumns="False"
+                                      CanUserDeleteRows="False" 
+                                      CanUserResizeColumns="False"
+                                      CanUserResizeRows="False" 
+                                      CanUserSortColumns="True"
+                                      IsReadOnly="True" 
+                                      SelectionMode="Extended"
+                                      RowStyle="{StaticResource DefaultDataGridRowStyle}"
+                                      FontSize="25" />
+                            
+                            <StackPanel Grid.Row="1" 
+                                        Orientation="Horizontal" 
+                                        HorizontalAlignment="Center">
+                                
+                                <ComboBox Name="comboBoxReportType" 
+                                          Margin="5" 
+                                          Width="200">
+                                    <ComboBoxItem Content="По категориям" />
+                                    <ComboBoxItem Content="За период" />
+                                    <ComboBoxItem Content="По пользователю" />
+                                    <ComboBoxItem Content="В категории" />
+                                    <ComboBoxItem Content="В категории по пользователю" />
+                                    <ComboBoxItem Content="За период в категории" />
+                                    <ComboBoxItem Content="За период по пользователю" />
+                                    <ComboBoxItem Content="За период в категории по пользователю" />
+                                </ComboBox>
+                                
+                                <Button Click="ButtonShowReportClick" 
+                                        Content="Вывести отчет" 
+                                        Margin="5"
+                                        Width="200" />
+                                
+                                <Button Content="Экспортировать отчет" 
+                                        Margin="5" 
+                                        Width="200" 
+                                        Click="ButtonExportReportClick" />
+                                
+                            </StackPanel>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </Grid>
+    </Grid>
+</ui:UiWindow>

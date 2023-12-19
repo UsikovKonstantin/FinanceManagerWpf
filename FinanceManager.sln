@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connector", "Connector\Connector.csproj", "{97DB563A-A4D4-4FB7-9880-AF0B4E128A00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Controller", "Controller\Controller.csproj", "{06694278-20CC-48B1-BE91-78A54C832C11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceManagerApp", "FinanceManagerApp\FinanceManagerApp.csproj", "{6D4E1627-26E1-4E86-842E-1CA28C276A9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97DB563A-A4D4-4FB7-9880-AF0B4E128A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97DB563A-A4D4-4FB7-9880-AF0B4E128A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97DB563A-A4D4-4FB7-9880-AF0B4E128A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97DB563A-A4D4-4FB7-9880-AF0B4E128A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06694278-20CC-48B1-BE91-78A54C832C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06694278-20CC-48B1-BE91-78A54C832C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06694278-20CC-48B1-BE91-78A54C832C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06694278-20CC-48B1-BE91-78A54C832C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D4E1627-26E1-4E86-842E-1CA28C276A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4E1627-26E1-4E86-842E-1CA28C276A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4E1627-26E1-4E86-842E-1CA28C276A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4E1627-26E1-4E86-842E-1CA28C276A9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

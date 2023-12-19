@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <RootNamespace>Finance_Manager</RootNamespace>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="WPF-UI" Version="2.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Connector\Connector.csproj" />
+        <ProjectReference Include="..\Controller\Controller.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Assets\Add.png" />
+        <Resource Include="Assets\Add.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Assets\Remove.png" />
+        <Resource Include="Assets\Remove.png" />
+    </ItemGroup>
+
+</Project>

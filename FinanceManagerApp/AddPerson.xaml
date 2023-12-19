@@ -1,0 +1,66 @@
+﻿<ui:UiWindow x:Class="Finance_Manager.AddPerson"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             ExtendsContentIntoTitleBar="True"
+             WindowStyle="None"
+             WindowBackdropType="Mica"
+             MaxHeight="150" 
+             MinHeight="150"
+             MaxWidth="400" 
+             MinWidth="400"
+             FontSize="20"
+             WindowStartupLocation="CenterScreen">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Grid.Row="0"
+                     Title="Новый пользователь" 
+                     VerticalContentAlignment="Stretch" 
+                     Padding="10,0,0,0" />
+        
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" 
+                           TextAlignment="Center" 
+                           Text="Введите имя нового пользователя" />
+                
+                <TextBox Grid.Row="1" 
+                         Name="textBoxPersonName" />
+                
+                <Button Grid.Row="2" 
+                        Width="90" 
+                        HorizontalAlignment="Left" 
+                        Content="Добавить" 
+                        Click="ButtonAddPersonClick" />
+                
+                <Button Grid.Row="2" 
+                        Width="80" 
+                        HorizontalAlignment="Right" 
+                        Content="Закрыть" 
+                        Click="ButtonCloseClick" />
+                
+                <TextBlock Grid.Row="2" 
+                           HorizontalAlignment="Center" 
+                           Text="Ожидание" 
+                           TextAlignment="Center"
+                           VerticalAlignment="Center" 
+                           Name="textBlockOperationStatus" />
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</ui:UiWindow>
